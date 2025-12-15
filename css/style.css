@@ -6,159 +6,141 @@
     font-family: Arial, sans-serif;
 }
 
-/* ===== BODY ===== */
-html, body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+/* ===== BODY Y COLORES ===== */
+body {
     background-color: #f5f5f5;
-    color: #222; /* textos de afuera en modo claro */
+    color: #222; /* texto afuera en modo claro */
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* MODO OSCURO BODY */
+/* MODO OSCURO MANUAL */
 body.dark-mode {
     background-color: #121212;
-    color: #fff; /* textos de afuera en modo oscuro */
+    color: #fff; /* texto afuera en modo oscuro */
 }
 
 /* ===== ENCABEZADO ===== */
 .top-header {
     background-color: #2c3e50;
     color: #fff;
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 /* ===== BARRA DE NAVEGACIÓN ===== */
 .navbar {
-    background-color: #2c3e50;
+    background-color: #4a90e2; /* barra azul clara */
     color: #fff;
-    width: 100%;
-}
-.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
 }
+
 .nav-logo {
     font-weight: bold;
     font-size: 1.2rem;
-    color: #fff;
 }
+
 .nav-menu {
     list-style: none;
     display: flex;
     gap: 1rem;
 }
+
 .nav-menu li a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    padding: 0.3rem 0.5rem;
-    transition: background-color 0.3s;
-}
-.nav-menu li a:hover,
-.nav-menu li.active a {
-    background-color: #4a90e2;
-    border-radius: 4px;
 }
 
-/* HAMBURGUESA MÓVIL */
+.nav-menu li.active a {
+    color: #ffd700; /* resaltado activo */
+}
+
 .hamburger {
     display: none;
-    font-size: 1.5rem;
     cursor: pointer;
-}
-@media (max-width: 768px) {
-    .nav-menu {
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        background-color: #2c3e50;
-        border-radius: 8px;
-        margin: 0.5rem;
-    }
-    .nav-menu.active {
-        max-height: 500px;
-    }
-    .hamburger {
-        display: block;
-    }
+    font-size: 1.5rem;
 }
 
-/* ===== SECCIONES ===== */
-.main {
+/* ===== CONTENIDO PRINCIPAL ===== */
+main {
     flex: 1;
     max-width: 900px;
     margin: 1rem auto;
-    width: 95%;
 }
 
-/* ===== TARJETAS ===== */
+/* ===== SECCIONES ===== */
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== LISTAS ===== */
 .cursos-list, .tareas-list {
     list-style: none;
     padding: 0;
-    margin-bottom: 1rem;
 }
 
-/* MIS CURSOS */
+/* ===== TARJETAS DE CURSOS ===== */
 .section-cursos .cursos-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* apiladas verticalmente */
     gap: 1rem;
-    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
-.section-cursos .curso-item {
+
+.curso-item {
     background-color: #fff;
+    color: #000; /* texto dentro siempre negro */
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    flex: 1 1 900px;
-    max-width: 900px;
-    color: #000; /* letra siempre negra */
+    width: 100%;
 }
 
-/* DASHBOARD */
+/* ===== TARJETAS DE TAREAS ===== */
 .tarea-item {
     background-color: #fff;
+    color: #000; /* texto dentro siempre negro */
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 100%;
-    color: #000; /* letra siempre negra */
 }
+
 .curso-item ul, .tarea-item ul {
     margin-top: 0.5rem;
     padding-left: 1.2rem;
 }
+
 .curso-item li, .tarea-item li {
     margin-bottom: 0.3rem;
-    color: #000; /* letra dentro siempre negra */
 }
 
 /* ===== FORMULARIOS ===== */
 form {
     background-color: #fff;
+    color: #000; /* texto dentro siempre negro */
     padding: 1rem;
     border-radius: 8px;
     max-width: 400px;
     margin: 1rem auto;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    color: #000; /* letra siempre negra */
 }
+
 label {
     display: block;
     font-weight: bold;
     margin-bottom: 0.2rem;
 }
+
 input[type="email"], input[type="password"], button {
     width: 100%;
     padding: 0.5rem;
@@ -166,19 +148,21 @@ input[type="email"], input[type="password"], button {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    color: #000;
 }
+
 input:focus {
     outline: 2px solid #4a90e2;
 }
+
 button {
-    background-color: #4a90e2;
-    color: #fff; /* azul siempre */
+    background-color: #4a90e2; /* botón azul */
+    color: #fff;
     border: none;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s;
 }
+
 button:hover, button:focus {
     background-color: #357ABD;
 }
@@ -192,6 +176,7 @@ button:hover, button:focus {
     margin: 1rem auto;
     transition: transform 0.5s;
 }
+
 #logo:hover {
     transform: scale(1.2) rotate(360deg);
 }
@@ -203,51 +188,55 @@ button:hover, button:focus {
     align-items: center;
     margin-bottom: 1rem;
 }
+
 .calendario-nav a {
     text-decoration: none;
-    color: #000;
     font-weight: bold;
+    color: #a0522d; /* color café para recordatorios */
 }
+
 .calendario-nav strong {
     font-size: 1.1rem;
 }
+
 .calendario {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
+
 .calendario th, .calendario td {
     border: 1px solid #ccc;
-    width: 14.28%;
-    height: 80px;
     text-align: center;
-    vertical-align: top;
+    vertical-align: middle;
+    width: 14.28%;
+    height: 90px;
     position: relative;
     background-color: #fff;
-    color: #000; /* letra siempre negra */
+    color: #000; /* texto dentro siempre negro */
 }
+
 .eventos-container {
     margin-top: 2px;
 }
+
 .evento {
     font-size: 0.7rem;
-    display: block;
-    color: #000; /* letra siempre negra */
-}
-
-/* ===== LINEA DEL FOOTER ===== */
-hr.footer-line {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 0 auto 1rem;
-    width: 95%;
 }
 
 /* ===== PIE DE PÁGINA ===== */
+.footer-line {
+    max-width: 900px;
+    margin: 1rem auto;
+    border: 1px solid #ccc;
+}
+
 .footer {
     text-align: center;
     font-size: 0.9rem;
     color: #666;
-    margin-top: auto; /* siempre al final */
+    margin-top: auto; /* siempre pegado al final */
+    padding: 0.5rem 0;
 }
 
 /* ===== BOTÓN MODO OSCURO ===== */
@@ -270,13 +259,30 @@ hr.footer-line {
     z-index: 999;
 }
 
+#toggle-dark:hover {
+    transform: scale(1.2);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-    .main, form {
-        padding: 0.5rem;
+    .hamburger {
+        display: block;
     }
-    .curso-item, .tarea-item {
-        padding: 0.8rem;
+    .nav-menu {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: #4a90e2;
+        border-radius: 8px;
+        padding: 0.5rem 0;
+    }
+    .nav-menu.active {
+        max-height: 500px;
+    }
+    .nav-menu li {
+        margin: 0.5rem 0;
+        text-align: center;
     }
     #logo {
         width: 150px;
@@ -285,7 +291,14 @@ hr.footer-line {
     .calendario th, .calendario td {
         height: 70px;
     }
-    .evento {
-        font-size: 0.65rem;
-    }
+}
+
+/* ===== MODO OSCURO TARJETAS, FORMULARIOS Y CALENDARIO ===== */
+body.dark-mode .curso-item,
+body.dark-mode .tarea-item,
+body.dark-mode form,
+body.dark-mode .calendario th,
+body.dark-mode .calendario td {
+    background-color: #fff; /* tarjetas blancas */
+    color: #000; /* texto dentro negro siempre */
 }
