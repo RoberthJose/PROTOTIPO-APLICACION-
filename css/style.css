@@ -270,4 +270,33 @@ body.dark-mode form {
     margin: 0.5rem 0;
 }
 
+/* ===== NAVBAR RESPONSIVE ===== */
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    transition: max-height 0.3s ease;
+}
+
+/* Menú oculto en móvil */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #4a90e2;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    }
+
+    .nav-menu.show {
+        max-height: 500px; /* ajustable según cantidad de enlaces */
+    }
+
+    .nav-menu li {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}
+
 
