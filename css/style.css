@@ -6,34 +6,22 @@
     font-family: Arial, sans-serif;
 }
 
-/* ===== BODY Y COLORES ===== */
-body {
+/* ===== BODY ===== */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
     background-color: #f5f5f5;
     color: #222;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* MODO OSCURO AUTOMÁTICO */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #eee;
-    }
-}
-
-/* MODO OSCURO MANUAL */
+/* ===== MODO OSCURO MANUAL ===== */
 body.dark-mode {
     background-color: #121212;
-    color: #eee;
-}
-
-/* ===== BODY FLEX PARA FOOTER ===== */
-html, body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    color: #222; /* letra negra por defecto en cuadros */
 }
 
 /* ===== ENCABEZADO ===== */
@@ -61,6 +49,7 @@ html, body {
 .nav-logo {
     font-weight: bold;
     font-size: 1.2rem;
+    color: #fff;
 }
 .nav-menu {
     list-style: none;
@@ -111,10 +100,6 @@ html, body {
     margin: 1rem auto;
     width: 95%;
 }
-.section-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
 
 /* ===== LISTAS DE TARJETAS ===== */
 .cursos-list, .tareas-list {
@@ -135,8 +120,9 @@ html, body {
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    flex: 1 1 900px;
+    flex: 1 1 280px;
     max-width: 900px;
+    color: #000; /* siempre letra negra */
 }
 
 /* ===== TARJETAS DASHBOARD ===== */
@@ -147,6 +133,7 @@ html, body {
     margin-bottom: 1rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     width: 100%;
+    color: #000; /* siempre letra negra */
 }
 .curso-item ul, .tarea-item ul {
     margin-top: 0.5rem;
@@ -164,7 +151,7 @@ form {
     max-width: 400px;
     margin: 1rem auto;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
+    color: #000; /* letra negra */
 }
 label {
     display: block;
@@ -178,6 +165,7 @@ input[type="email"], input[type="password"], button {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
+    color: #000;
 }
 input:focus {
     outline: 2px solid #4a90e2;
@@ -192,8 +180,6 @@ button {
 }
 button:hover, button:focus {
     background-color: #357ABD;
-    outline: 2px solid #fff;
-    outline-offset: 2px;
 }
 
 /* ===== LOGO ===== */
@@ -227,16 +213,16 @@ button:hover, button:focus {
 .calendario {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
 }
 .calendario th, .calendario td {
     border: 1px solid #ccc;
+    width: 14.28%;
+    height: 80px;
     text-align: center;
     vertical-align: top;
-    width: 14.28%;
-    height: 90px;
-    padding: 0.2rem;
     position: relative;
+    background-color: #fff;
+    color: #000; /* siempre letra negra */
 }
 .eventos-container {
     margin-top: 2px;
@@ -248,10 +234,10 @@ button:hover, button:focus {
 
 /* ===== PIE DE PÁGINA ===== */
 .footer {
-    margin-top: auto;
     text-align: center;
     font-size: 0.9rem;
     color: #666;
+    margin-top: auto; /* pegado al final */
 }
 
 /* ===== BOTÓN MODO OSCURO ===== */
@@ -272,9 +258,6 @@ button:hover, button:focus {
     justify-content: center;
     transition: all 0.3s;
     z-index: 999;
-}
-#toggle-dark:hover {
-    transform: scale(1.2);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -297,22 +280,3 @@ button:hover, button:focus {
     }
 }
 
-/* ===== MODO OSCURO TARJETAS, FORMULARIOS E INPUTS ===== */
-body.dark-mode .curso-item,
-body.dark-mode .tarea-item,
-body.dark-mode form {
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    color: #eee;
-}
-body.dark-mode input,
-body.dark-mode textarea,
-body.dark-mode select {
-    background-color: #2a2a2a;
-    color: #f5f5f5;
-    border: 1px solid #555;
-}
-body.dark-mode button {
-    background-color: #4a90e2;
-    color: #fff;
-}
