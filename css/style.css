@@ -88,28 +88,25 @@ main {
 }
 
 /* ===== TARJETAS DE CURSOS (MIS CURSOS) ===== */
+/* ===== CUADROS DE "MIS CURSOS" ===== */
 .section-cursos .cursos-list {
-    display: block; /* vertical */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
     max-width: 900px;
     margin: 0 auto;
-    gap: 1rem;
 }
-
-.curso-item {
+.section-cursos .curso-item {
     background-color: #fff;
-    color: #000; /* texto dentro siempre negro */
     border-radius: 8px;
     padding: 1rem;
-    margin-bottom: 1rem;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 100%;
-    transition: box-shadow 0.3s, transform 0.3s;
+    flex: 1 1 900px; 
+    max-width: 900px;
+    box-sizing: border-box;
 }
 
-.curso-item:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    transform: translateY(-3px);
-}
 
 /* ===== TARJETAS DE TAREAS ===== */
 .tarea-item {
