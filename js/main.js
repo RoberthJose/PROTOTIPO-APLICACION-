@@ -1,12 +1,10 @@
 // ===== MODO OSCURO =====
 const toggleDark = document.getElementById('toggle-dark');
 
-// Activa modo oscuro si ya estaba guardado
-if (localStorage.getItem('dark-mode') === 'true') {
+if(localStorage.getItem('dark-mode') === 'true') {
     document.body.classList.add('dark-mode');
 }
 
-// Cambia modo oscuro al hacer clic
 toggleDark.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
@@ -22,19 +20,17 @@ if (hamburger && navMenu) {
     });
 }
 
-// Cierra el menú al hacer clic en un enlace (móvil/PC)
-document.querySelectorAll('.nav-menu li a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-    });
-});
+// Abrir menú automáticamente en mis-cursos.html (móvil)
+if (window.location.pathname.includes('mis-cursos.html') && window.innerWidth <= 768) {
+    navMenu.classList.add('show');
+}
 
 // ===== REDIRECCIÓN FORMULARIO LOGIN =====
 const formLogin = document.querySelector('form.form-login');
 
-if (formLogin) {
+if(formLogin) {
     formLogin.addEventListener('submit', (e) => {
-        e.preventDefault(); // evita envío real
-        window.location.href = 'dashboard.html'; // redirige al dashboard
+        e.preventDefault();
+        window.location.href = 'dashboard.html';
     });
 }
