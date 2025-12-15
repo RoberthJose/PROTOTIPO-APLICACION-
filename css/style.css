@@ -303,23 +303,25 @@ body.dark-mode .calendario td {
     color: #000; /* texto dentro negro siempre */
 }
 
-/* ===== TARJETAS "MIS CURSOS" COMO DASHBOARD ===== */
+/* ===== CUADROS DE "MIS CURSOS" FORZADOS COMO DASHBOARD ===== */
 .section-cursos .cursos-list {
-    display: block !important;        /* vertical, una debajo de otra */
-    max-width: 900px;                 /* ancho máximo */
-    margin: 0 auto;                   /* centradas */
-    padding: 0;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    justify-content: center !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
 }
 
 .section-cursos .curso-item {
-    background-color: #fff;           /* fondo blanco */
-    color: #000;                      /* texto negro dentro siempre */
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 100%;                      /* ocupar todo el ancho del contenedor */
-    box-sizing: border-box;
+    background-color: #fff !important;
+    border-radius: 8px !important;
+    padding: 1rem !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+    flex: 1 1 900px !important;
+    max-width: 900px !important;
+    box-sizing: border-box !important;
+    color: #000 !important; /* texto dentro siempre negro */
 }
 
 
